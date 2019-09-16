@@ -1,4 +1,4 @@
-ASociaciación Autocuidado y experiencias adversas
+Asociaciación Autocuidado y experiencias adversas
 ================
 Luis Ramudo
 17/8/2019
@@ -355,33 +355,36 @@ Modelo con interacción (efecto aditivo)
     ## 
     ## Call:
     ## lm(formula = Autocuidado_Total ~ EARLY_FP + EARLY_FN_A + EARLY_FN_S + 
-    ##     EARLY_FN_M + EARLY_FN_O + EARLY_FN_AX + EARLY_FN_AE, data = Base_red, 
-    ##     subset = PBI_cuidadoM + PBI_sobrep_contrM + PBI_cuidado_P + 
-    ##         PBI_sobrep_contrP)
+    ##     EARLY_FN_M + EARLY_FN_O + EARLY_FN_AX + EARLY_FN_AE + PBI_cuidadoM + 
+    ##     PBI_sobrep_contrM + PBI_cuidado_P + PBI_sobrep_contrP, data = Base_red)
     ## 
     ## Residuals:
     ##     Min      1Q  Median      3Q     Max 
-    ## -65.745 -23.226   3.903  17.773  48.718 
+    ## -74.201 -17.071   0.393  18.574  54.625 
     ## 
     ## Coefficients:
-    ##              Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept) 154.70096   11.58790  13.350  < 2e-16 ***
-    ## EARLY_FP     -0.61888    0.15506  -3.991 8.61e-05 ***
-    ## EARLY_FN_A   -0.05379    0.13780  -0.390  0.69658    
-    ## EARLY_FN_S    0.19849    0.09549   2.079  0.03866 *  
-    ## EARLY_FN_M   -0.38808    0.12790  -3.034  0.00266 ** 
-    ## EARLY_FN_O    0.21074    0.12697   1.660  0.09822 .  
-    ## EARLY_FN_AX   0.40848    0.13494   3.027  0.00272 ** 
-    ## EARLY_FN_AE  -0.19437    0.13035  -1.491  0.13717    
+    ##                    Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)       113.87408   11.55793   9.852   <2e-16 ***
+    ## EARLY_FP            0.08799    0.13033   0.675   0.5002    
+    ## EARLY_FN_A          0.17348    0.11567   1.500   0.1349    
+    ## EARLY_FN_S          0.16408    0.08720   1.882   0.0611 .  
+    ## EARLY_FN_M         -0.01553    0.08343  -0.186   0.8525    
+    ## EARLY_FN_O         -0.05822    0.09385  -0.620   0.5356    
+    ## EARLY_FN_AX         0.25005    0.10504   2.380   0.0180 *  
+    ## EARLY_FN_AE        -0.06925    0.11037  -0.627   0.5309    
+    ## PBI_cuidadoM       -0.76132    0.29704  -2.563   0.0110 *  
+    ## PBI_sobrep_contrM  -0.02623    0.28623  -0.092   0.9271    
+    ## PBI_cuidado_P       0.19447    0.23599   0.824   0.4107    
+    ## PBI_sobrep_contrP   0.56977    0.23972   2.377   0.0182 *  
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 28.24 on 253 degrees of freedom
-    ##   (18 observations deleted due to missingness)
-    ## Multiple R-squared:  0.2251, Adjusted R-squared:  0.2036 
-    ## F-statistic:  10.5 on 7 and 253 DF,  p-value: 1.411e-11
+    ## Residual standard error: 26.38 on 251 degrees of freedom
+    ##   (16 observations deleted due to missingness)
+    ## Multiple R-squared:  0.1949, Adjusted R-squared:  0.1596 
+    ## F-statistic: 5.522 on 11 and 251 DF,  p-value: 6.68e-08
 
-## Categorizacion autocuiado
+## Categorizacion autocuidado
 
 Distribución de frecuencias de la variable autocuidado
 ![](Autocuidado_study_files/figure-gfm/autocuidado_frequency-1.png)<!-- -->
@@ -401,6 +404,64 @@ Distribución de frecuencias de la variable autocuidado
 | Problemas\_amigos\_Sentimentales |          0.1877997 |         0.1242033 |                0.3202757 |       0.3232311 |         0.1767853 |                    0.1355994 |                        1.0000000 |
 
 ### Modelo de regresión lineal EFI
+
+### Examen de variables empleadas y análisis de correlación las variables EFI
+
+    ## Classes 'tbl_df', 'tbl' and 'data.frame':    279 obs. of  7 variables:
+    ##  $ Autocuidado_Total             : num  114 128 130 85 125 138 108 75 105 109 ...
+    ##   ..- attr(*, "label")= chr "Autocuidado total"
+    ##   ..- attr(*, "format.spss")= chr "F8.2"
+    ##   ..- attr(*, "display_width")= int 19
+    ##  $ AS_intrafamiliar              : 'haven_labelled' num  0 0 0 0 0 0 0 0 0 0 ...
+    ##   ..- attr(*, "label")= chr "Abuso sexual intrafamiliar"
+    ##   ..- attr(*, "format.spss")= chr "F8.2"
+    ##   ..- attr(*, "display_width")= int 10
+    ##   ..- attr(*, "labels")= Named num  0 1
+    ##   .. ..- attr(*, "names")= chr  "No" "Si"
+    ##  $ Violencia_extrafamiliar       : 'haven_labelled' num  0 1 0 0 0 0 0 1 0 0 ...
+    ##   ..- attr(*, "label")= chr "Ser testigo o víctima de violencia fuera del hogar"
+    ##   ..- attr(*, "format.spss")= chr "F8.2"
+    ##   ..- attr(*, "display_width")= int 25
+    ##   ..- attr(*, "labels")= Named num  0 1
+    ##   .. ..- attr(*, "names")= chr  "No" "Si"
+    ##  $ Bullying_niños                : 'haven_labelled' num  0 0 1 1 0 1 0 1 1 1 ...
+    ##   ..- attr(*, "label")= chr "Sufrir agresiones o burlas por parte de otros niños"
+    ##   ..- attr(*, "format.spss")= chr "F8.2"
+    ##   ..- attr(*, "display_width")= int 17
+    ##   ..- attr(*, "labels")= Named num  0 1
+    ##   .. ..- attr(*, "names")= chr  "No" "Si"
+    ##  $ Profesor_agresor              : 'haven_labelled' num  0 1 0 1 0 0 0 0 1 0 ...
+    ##   ..- attr(*, "label")= chr "Agresión, burlas o humillación de un profesor"
+    ##   ..- attr(*, "format.spss")= chr "F8.2"
+    ##   ..- attr(*, "display_width")= int 18
+    ##   ..- attr(*, "labels")= Named num  0 1
+    ##   .. ..- attr(*, "names")= chr  "No" "Si"
+    ##  $ Muerte_enfermedad_familiar    : 'haven_labelled' num  1 1 0 0 0 1 0 0 1 1 ...
+    ##   ..- attr(*, "label")= chr "Muerte, enfermedad o abuso de substancias de un familiar importante para mí"
+    ##   ..- attr(*, "format.spss")= chr "F8.2"
+    ##   ..- attr(*, "display_width")= int 28
+    ##   ..- attr(*, "labels")= Named num  0 1
+    ##   .. ..- attr(*, "names")= chr  "No" "Si"
+    ##  $ Problemas_amigos_Sentimentales: 'haven_labelled' num  1 1 0 0 0 0 0 0 1 0 ...
+    ##   ..- attr(*, "label")= chr "Problemas con amigos o problemas sentimentales"
+    ##   ..- attr(*, "format.spss")= chr "F8.2"
+    ##   ..- attr(*, "display_width")= int 32
+    ##   ..- attr(*, "labels")= Named num  0 1
+    ##   .. ..- attr(*, "names")= chr  "No" "Si"
+
+|                                  | Autocuidado\_Total | AS\_intrafamiliar | Violencia\_extrafamiliar | Bullying\_niños | Profesor\_agresor | Muerte\_enfermedad\_familiar | Problemas\_amigos\_Sentimentales |
+| -------------------------------- | -----------------: | ----------------: | -----------------------: | --------------: | ----------------: | ---------------------------: | -------------------------------: |
+| Autocuidado\_Total               |          1.0000000 |         0.1895809 |                0.1311058 |       0.1662595 |         0.2032559 |                    0.1223368 |                        0.1877997 |
+| AS\_intrafamiliar                |          0.1895809 |         1.0000000 |                0.2095938 |       0.0558855 |         0.0786399 |                    0.2024448 |                        0.1242033 |
+| Violencia\_extrafamiliar         |          0.1311058 |         0.2095938 |                1.0000000 |       0.1439412 |         0.1992032 |                    0.1670109 |                        0.3202757 |
+| Bullying\_niños                  |          0.1662595 |         0.0558855 |                0.1439412 |       1.0000000 |         0.1499323 |                    0.0040038 |                        0.3232311 |
+| Profesor\_agresor                |          0.2032559 |         0.0786399 |                0.1992032 |       0.1499323 |         1.0000000 |                    0.1092636 |                        0.1767853 |
+| Muerte\_enfermedad\_familiar     |          0.1223368 |         0.2024448 |                0.1670109 |       0.0040038 |         0.1092636 |                    1.0000000 |                        0.1355994 |
+| Problemas\_amigos\_Sentimentales |          0.1877997 |         0.1242033 |                0.3202757 |       0.3232311 |         0.1767853 |                    0.1355994 |                        1.0000000 |
+
+### Análisis gráfico de asociación de autocuidado con las variables predictoras EFI
+
+![](Autocuidado_study_files/figure-gfm/plots_EFI-1.png)<!-- -->
 
     ## 
     ## Call:
